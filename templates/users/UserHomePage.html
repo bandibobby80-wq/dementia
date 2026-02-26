@@ -1,0 +1,55 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+
+<section class="py-5" style="background: linear-gradient(to right, #a2d4f3, #00509e); min-height: 90vh;">
+  <div class="container text-center">
+    <h2 class="mb-4 text-dark fw-bold animate__animated animate__fadeInDown">Understanding Dementia</h2>
+    <p class="lead mb-5 text-muted">Dementia is a condition that affects memory, thinking, and behavior. Our platform supports personalized prediction and early awareness to improve care and quality of life.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">What is Dementia?</h5>
+            <p class="card-text text-muted">Dementia is not a single disease but a group of brain disorders that lead to a progressive decline in cognitive function, interfering with daily activities and independence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">Symptoms</h5>
+            <p class="card-text text-muted">Common signs include memory loss, confusion, communication difficulty, personality changes, and impaired reasoning or decision-making.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">Causes & Types</h5>
+            <p class="card-text text-muted">Alzheimer's disease is the most common type. Other causes include vascular damage, Lewy bodies, and frontotemporal degeneration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title text-primary fw-bold">Input features</h5>
+            <p class="card-text text-muted">socioeconomic status:Socioeconomic Status (SES) is a measure of a person's social and economic standing based on income, education, and occupation, which can influence health outcomes like dementia risk.,
+               Mini-Mental State Examination score ,Clinical Dementia Rating ,Estimated Total Intracranial Volume,Normalized Whole Brain Volume,Atlas Scaling Factor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <a href="{% url 'UserRegisterActions' %}" class="btn btn-outline-primary btn-lg me-3">Register New User</a>
+      <a href="{% url 'UserHome' %}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

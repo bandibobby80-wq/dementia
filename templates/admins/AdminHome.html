@@ -1,0 +1,82 @@
+{% extends 'admins/adminbase.html' %}
+{% block contents %}
+
+<section class="py-5" style="background: linear-gradient(135deg, #4da8da, #1a252f); min-height: 80vh; color: white;">
+  <div class="container text-center py-4">
+    <h2 class="mb-4 fw-bold animate__animated animate__fadeInDown" style="color: #dfe7fd;">Admin Dashboard: Dementia Prediction System</h2>
+    <p class="lead mb-5 mx-auto" style="max-width: 700px; color: #e0eafc;">
+      Monitor users, manage patient data, and refine machine learning models to support early and personalized dementia diagnosis.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0 h-100 bg-dark text-white animate__animated animate__fadeInUp" data-animate-delay="0.1s">
+          <div class="card-body">
+            <i class="fas fa-users fa-2x mb-3" style="color: #4da8da;"></i>
+            <h5 class="card-title fw-bold">User Management</h5>
+            <p class="card-text">View and manage registered users and patients for secure data handling and personalized results.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0 h-100 bg-dark text-white animate__animated animate__fadeInUp" data-animate-delay="0.2s">
+          <div class="card-body">
+            <i class="fas fa-microscope fa-2x mb-3" style="color: #4da8da;"></i>
+            <h5 class="card-title fw-bold">Model Training</h5>
+            <p class="card-text">Train and evaluate AI models for predicting dementia stages based on health records and assessments.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0 h-100 bg-dark text-white animate__animated animate__fadeInUp" data-animate-delay="0.3s">
+          <div class="card-body">
+            <i class="fas fa-chart-pie fa-2x mb-3" style="color: #4da8da;"></i>
+            <h5 class="card-title fw-bold">Analytics Dashboard</h5>
+            <p class="card-text">Track model performance, accuracy trends, and prediction outcomes in real time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prism.js for Syntax Highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css" rel="stylesheet" integrity="sha512-v2k+AFoC3vG9nuDRi8Jgfq+giTKgUs7j2CYDPKuK3N6NKZXDE2kIAP2th6otGr7o7+6lXMh9vaFIfS+3R+0bTbg==" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha512-mWxw4WL+qkpS+w5b5fK3vO8IUp9W7Yoh2o1N76JDr9F3T1fW4U4q2nZ64WkAd35n+bJ/siFzMwk6f7U2gAOkhww==" crossorigin="anonymous" defer></script>
+
+<!-- Font Awesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" integrity="sha512-YWzhKL2whUzj6hunp5lW5l4Qgv3JPa83ZEHhu7t73vT4xz3XwanMeDdh4kK32BroW3zTbtuJXTfJCN7tuuK2I0Q==" crossorigin="anonymous">
+
+<style>
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+  }
+  .animate__animated {
+    animation-duration: 0.8s;
+  }
+</style>
+
+<script>
+  // Trigger animations on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.animate__animated');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__fadeInUp');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
+
+{% endblock %}

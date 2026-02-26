@@ -1,0 +1,24 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+
+<section class="py-5" style="min-height: 90vh; background-color: #f0f8ff;">
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+
+    <h2 class="mb-4 text-center text-primary fw-bold">Predict Dementia Status</h2>
+
+    <form method="POST" class="w-50 bg-white p-4 rounded shadow text-center">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success mt-3">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="mt-4">
+        <h3 class="text-danger">Prediction: {{ prediction }}</h3>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+
+{% load static %}
+
+<section class="py-5" style="min-height: 90vh; background: #f0f8ff;">
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+    <h2 class="mb-4 text-center text-primary fw-bold">Upload Dataset to Train Dementia Model</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="w-50 text-center">
+      {% csrf_token %}
+      <div class="mb-3">
+        <input type="file" name="file" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Train</button>
+    </form>
+
+    {% if message %}
+      <div class="mt-5 text-center">
+        <p class="text-success fw-bold">{{ message }}</p>
+        <p>Accuracy: <strong>{{ accuracy }}%</strong></p>
+
+        <h3 class="mt-4">Confusion Matrix</h3>
+        <img src="/media/{{ confusion_img }}" style="max-width: 100%;" class="img-fluid">
+
+        <h3 class="mt-4">Correlation Heatmap</h3>
+        <img src="/media/{{ heatmap_img }}" style="max-width: 100%;" class="img-fluid">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

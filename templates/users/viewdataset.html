@@ -1,0 +1,35 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('table').DataTable({
+            "pageLength": 50
+        });
+    });
+</script>
+
+<section class="py-5" style="min-height: 90vh; background-color: #f0f8ff;">
+  <div class="container">
+
+    <div class="section-header text-center mb-4">
+        <h2 class="section-title wow fadeInDown" style="color: #a928c6;">Dataset View</h2>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <!-- Render the HTML table for the dataset -->
+            <div class="table-responsive bg-white p-3 rounded shadow">
+                {{ data|safe }}
+            </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
